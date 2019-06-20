@@ -1,0 +1,99 @@
+body {
+    background-image: linear-gradient(to right bottom, #e84b3a, #ed467a, #d45eb1, #a37ad6, #6490e2, #08a0e1, #00abd2, #00b3bb, #19bc98, #69be65, #adb92c, #f4a610);
+    height: 100vh;
+}
+
+/***********************************************Coloring*/
+.white-text { color: #ffffff;}
+
+/************************************************Rounding*/
+.quarter {
+    width: 50%;
+    height: 0;
+    padding-bottom: 50%;
+}
+
+.quarter.top-left {
+    border-top-left-radius: 100%;
+    box-shadow: inset 6px 6px 4px -3px #0003,
+                inset 47px 46px 0px 46px #4286f4, 
+                inset 54px 53px 0px 48px #285eb5, 
+                -6px -6px 4px -1px #0003;
+    cursor: pointer;
+}
+
+.quarter.top-left:active{
+    box-shadow: inset 56px 54px 0px 46px #dcc9c724, 
+                inset 47px 46px 0px 46px #4286f4, 
+                inset 54px 53px 0px 48px #285eb5, 
+                -5px -2px 4px -4px #0003;
+}
+
+.quarter.top-right {
+   border-top-right-radius: 100%;
+   box-shadow: inset -6px 6px 4px -3px #0003,
+               inset -46px 46px 0px 46px #e53522, 
+               inset -51px 51px 0px 50px #c32e1d, 
+               6px -6px 4px -1px #0003;
+   cursor: pointer;
+}
+
+.quarter.top-right:active{
+    box-shadow: inset -54px 55px 0px 46px #dcc9c724, 
+                inset -47px 46px 0px 46px #e53522, 
+                inset -52px 53px 0px 48px #c32e1d, 
+                4px -4px 4px -4px #0003;
+}
+
+.quarter.bottom-left{
+    border-bottom-left-radius: 100%;
+    box-shadow: inset 6px -6px 4px -2px #0003, 
+                inset 47px -46px 0px 46px #eaa010, 
+                inset 57px -55px 0px 44px #c78912, 
+                -5px 6px 4px -1px #0003;
+    cursor: pointer;
+}
+.quarter.bottom-left:active{
+    box-shadow: inset 59px -58px 0px 46px #dcc9c724, 
+                inset 59px -58px 0px 33px #eaa010, 
+                inset 66px -64px 0px 34px #c78912, 
+                -5px 4px 4px -5px #0003;
+}
+.quarter.bottom-right{
+    border-bottom-right-radius: 100%;
+    box-shadow: inset -6px -6px 4px -2px #0003, 
+                inset -50px -50px 0px 42px #18a51d, 
+                inset -53px -53px 0px 47px #138817, 
+                inset -32px -30px 5px 15px #0003, 
+                6px 6px 4px -1px #0003;
+    cursor: pointer;
+}
+.quarter.bottom-right:active{
+    box-shadow: inset -55px -54px 0px 44px #dcc9c724, 
+                inset -50px -50px 0px 42px #18a51d, 
+                inset -53px -53px 0px 47px #138817, 
+                inset -32px -30px 5px 15px #0003, 
+                4px 3px 4px -2px #0003;
+                
+}
+
+.middle-box {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 200px;
+    top: calc(50% - 110px);
+    right: calc(50% - 110px);
+    box-shadow: 0px 0px 9px 3px #0000005e;
+    background-image: linear-gradient(to bottom, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c9c9c9);
+    
+}
+
+#start {
+    text-align: center;
+}
+
+.hide {
+    display:none !important;
+}
