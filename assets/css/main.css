@@ -86,14 +86,65 @@ body {
     top: calc(50% - 110px);
     right: calc(50% - 110px);
     box-shadow: 0px 0px 9px 3px #0000005e;
-    background-image: linear-gradient(to bottom, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c9c9c9);
+    overflow:hidden;
+    
     
 }
 
 #start {
     text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-size: 39px;
+    padding-top: 36%;
+    padding-bottom: 31%;
+    font-weight: bold;
+    color: green;
+    text-shadow: 0px 0px 1px #6f6f6f;
+    background-image: linear-gradient(to bottom, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c9c9c9);
+    cursor: pointer;
+}
+
+#start:active{
+    background-image: linear-gradient(to top, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c9c9c9);
+}
+
+#playing {
+    text-align: center;
+    font-size: 39px;
+    padding-top: 15%;
+    padding-bottom: 31%;
+    font-weight: bold;
+    text-shadow: 0px 0px 1px #6f6f6f;
+    background-image: linear-gradient(to bottom, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c9c9c9);
+}
+
+#result-icon .fa-check {
+    color:green;
+}
+
+#result-icon .fa-times {
+    color:red;
+}
+
+#level{
+    font-size: 30px;
+    font-weight: 200;
 }
 
 .hide {
     display:none !important;
+}
+
+#start-again{
+    font-size: 15px;
+    border: 1px solid #015201;
+    display: inline-block;
+    border-radius: 33px;
+    padding: 5px 21px;
+    font-weight: 400;
+    background-color: #009c00;
+    color: #fff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff52, inset 0px 2px 3px #116725;
+    text-transform: uppercase;
+    cursor:pointer;
 }
