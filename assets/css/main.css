@@ -37,6 +37,13 @@ body {
                 -5px -2px 4px -4px #0003;
 }
 
+.quarter.top-left.active{
+    box-shadow: inset 56px 54px 0px 46px #dcc9c724, 
+                inset 47px 46px 0px 46px #4286f4, 
+                inset 54px 53px 0px 48px #285eb5, 
+                -5px -2px 4px -4px #0003;
+}
+
 .quarter.top-right {
    border-top-right-radius: 100%;
    box-shadow: inset -6px 6px 4px -3px #0003,
@@ -47,6 +54,12 @@ body {
 }
 
 .quarter.top-right:active{
+    box-shadow: inset -54px 55px 0px 46px #dcc9c724, 
+                inset -47px 46px 0px 46px #e53522, 
+                inset -52px 53px 0px 48px #c32e1d, 
+                4px -4px 4px -4px #0003;
+}
+.quarter.top-right.active{
     box-shadow: inset -54px 55px 0px 46px #dcc9c724, 
                 inset -47px 46px 0px 46px #e53522, 
                 inset -52px 53px 0px 48px #c32e1d, 
@@ -67,6 +80,12 @@ body {
                 inset 66px -64px 0px 34px #c78912, 
                 -5px 4px 4px -5px #0003;
 }
+.quarter.bottom-left.active{
+    box-shadow: inset 59px -58px 0px 46px #dcc9c724, 
+                inset 59px -58px 0px 33px #eaa010, 
+                inset 66px -64px 0px 34px #c78912, 
+                -5px 4px 4px -5px #0003;
+}
 .quarter.bottom-right{
     border-bottom-right-radius: 100%;
     box-shadow: inset -6px -6px 4px -2px #0003, 
@@ -74,9 +93,17 @@ body {
                 inset -53px -53px 0px 47px #138817, 
                 inset -32px -30px 5px 15px #0003, 
                 6px 6px 4px -1px #0003;
-    cursor: pointer;
+                cursor: pointer;
 }
 .quarter.bottom-right:active{
+    box-shadow: inset -55px -54px 0px 44px #dcc9c724, 
+                inset -50px -50px 0px 42px #18a51d, 
+                inset -53px -53px 0px 47px #138817, 
+                inset -32px -30px 5px 15px #0003, 
+                4px 3px 4px -2px #0003;
+                
+}
+.quarter.bottom-right.active{
     box-shadow: inset -55px -54px 0px 44px #dcc9c724, 
                 inset -50px -50px 0px 42px #18a51d, 
                 inset -53px -53px 0px 47px #138817, 
