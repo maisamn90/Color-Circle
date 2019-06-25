@@ -1,4 +1,8 @@
 var patern = [];
+var startTime;
+var endTime;
+var singleLevelTime = 0;
+var totaLtime = 0;
      async function generatePatern(){
          $("#start").addClass("disabled");
          $("#failed").addClass("disabled");
@@ -51,7 +55,7 @@ var patern = [];
                    }
                   }
                       
-                   
+                   startTime =  new Date();
                    return patern;
                 }
             }
@@ -93,15 +97,13 @@ var patern = [];
                 checkPaternsLenght(inputPatern, generatedPatern);
                 return inputPatern;
             }
-           
-            
-            
             }
             
             
-          async  function checkPaternsLenght(userPatern,generatedPatern ){
+          async function checkPaternsLenght(userPatern,generatedPatern ){
                 var userPaternLenght = userPatern.length;
                 var generatedPaternLength = generatedPatern.length;
+                
                 
               if (userPaternLenght == generatedPaternLength) {
                   //alert ("length is equals");
@@ -117,7 +119,14 @@ var patern = [];
                         // $(this).children("i").remove();
                          inputPatern = [];
                          generatedPatern = [];
+                         endTime = new Date();
+                         var levelTime = endTime - startTime;
+                         singleLevelTime = (levelTime - 1000) /1000;
+                         totaLtime += singleLevelTime;
+                         console.log(totaLtime);
+                         $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-check text-success mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime +"<sub>s</sub></li>");
                          generatePatern();
+                         
                      }
                      else{
                          $("#playing").addClass("hide");
@@ -127,6 +136,8 @@ var patern = [];
                           inputPatern = [];
                           generatedPatern = [];
                           patern = [];
+                          $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime +"<sub>s</sub></li>");
+                          $("#performance").removeClass("hide");
                           //document.getElementById("start").disabled = false;
                      }
                  
@@ -142,9 +153,14 @@ var patern = [];
                                $("#playing").addClass("hide");
                          $("#failed").removeClass("hide");
                               //alert("wrong input");
+                              $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
+                              $(".total-result").html(  generatedPaternLength - 1 + "<sub>L</sub> / " + totaLtime + "<sub>S</sub>")
+                          $("#performance").removeClass("hide");
+                          
                               generatedPatern = [];
                               inputPatern = [];
                               patern = [];
+                              
                               // document.getElementById("demo").innerHTML = "";
                                //document.getElementById("start").disabled = false;
                               
