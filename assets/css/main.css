@@ -23,92 +23,98 @@ body {
 
 .quarter.top-left {
     border-top-left-radius: 100%;
-    box-shadow: inset 6px 6px 4px -3px #0003,
-                inset 47px 46px 0px 46px #4286f4, 
-                inset 54px 53px 0px 48px #285eb5, 
+    box-shadow: inset 6px 6px 4px -3px #0003, 
+                inset 47px 46px 0px 46px #89b0ef, 
+                inset 54px 53px 0px 48px #718ab3, 
                 -6px -6px 4px -1px #0003;
     cursor: pointer;
 }
 
 .quarter.top-left:active{
-    box-shadow: inset 56px 54px 0px 46px #dcc9c724, 
+    box-shadow: inset 6px 6px 4px -3px #0003,
                 inset 47px 46px 0px 46px #4286f4, 
                 inset 54px 53px 0px 48px #285eb5, 
-                -5px -2px 4px -4px #0003;
+                -3px -3px 4px -1px #0003;
+                
 }
 
-.quarter.top-left.active{
-    box-shadow: inset 56px 54px 0px 46px #dcc9c724, 
+/*.quarter.top-left.active{*/
+/*    box-shadow: inset 56px 54px 0px 46px #dcc9c724, */
+/*                inset 47px 46px 0px 46px #4286f4, */
+/*                inset 54px 53px 0px 48px #4286f4, */
+/*                -5px -2px 4px -4px #0003;*/
+/*}*/
+
+.quarter.top-left.active {
+    border-top-left-radius: 100%;
+    box-shadow: inset 6px 6px 4px -3px #0003,
                 inset 47px 46px 0px 46px #4286f4, 
                 inset 54px 53px 0px 48px #285eb5, 
-                -5px -2px 4px -4px #0003;
+                -3px -3px 4px -1px #0003;
 }
 
 .quarter.top-right {
    border-top-right-radius: 100%;
-   box-shadow: inset -6px 6px 4px -3px #0003,
-               inset -46px 46px 0px 46px #e53522, 
-               inset -51px 51px 0px 50px #c32e1d, 
-               6px -6px 4px -1px #0003;
-   cursor: pointer;
+   box-shadow: inset -6px 6px 4px -3px #0003, inset -46px 46px 0px 46px #f36758, inset -51px 51px 0px 50px #c55c50, 6px -6px 4px -1px #0003;
+               cursor: pointer;
 }
 
 .quarter.top-right:active{
-    box-shadow: inset -54px 55px 0px 46px #dcc9c724, 
-                inset -47px 46px 0px 46px #e53522, 
-                inset -52px 53px 0px 48px #c32e1d, 
-                4px -4px 4px -4px #0003;
+    box-shadow: inset -6px 6px 4px -3px #0003, 
+                inset -46px 46px 0px 46px #e53522, 
+                inset -51px 51px 0px 50px #c32e1d, 
+                3px -3px 4px -1px #0003
 }
 .quarter.top-right.active{
-    box-shadow: inset -54px 55px 0px 46px #dcc9c724, 
-                inset -47px 46px 0px 46px #e53522, 
-                inset -52px 53px 0px 48px #c32e1d, 
-                4px -4px 4px -4px #0003;
+    box-shadow: inset -6px 6px 4px -3px #0003, 
+                inset -46px 46px 0px 46px #e53522, 
+                inset -51px 51px 0px 50px #c32e1d, 
+                3px -3px 4px -1px #0003
 }
 
 .quarter.bottom-left{
     border-bottom-left-radius: 100%;
     box-shadow: inset 6px -6px 4px -2px #0003, 
-                inset 47px -46px 0px 46px #eaa010, 
-                inset 57px -55px 0px 44px #c78912, 
-                -5px 6px 4px -1px #0003;
+    inset 47px -46px 0px 46px #f5bb4c, 
+    inset 57px -55px 0px 44px #dcaa49, 
+    -5px 6px 4px -1px #0003;
     cursor: pointer;
 }
 .quarter.bottom-left:active{
-    box-shadow: inset 59px -58px 0px 46px #dcc9c724, 
-                inset 59px -58px 0px 33px #eaa010, 
-                inset 66px -64px 0px 34px #c78912, 
-                -5px 4px 4px -5px #0003;
+    box-shadow: inset 6px -6px 4px -2px #0003, 
+                inset 47px -46px 0px 46px #eaa010, 
+                inset 57px -55px 0px 44px #c78912, 
+                -3px 3px 4px -1px #0003;
 }
 .quarter.bottom-left.active{
-    box-shadow: inset 59px -58px 0px 46px #dcc9c724, 
-                inset 59px -58px 0px 33px #eaa010, 
-                inset 66px -64px 0px 34px #c78912, 
-                -5px 4px 4px -5px #0003;
+    box-shadow: inset 6px -6px 4px -2px #0003, 
+                inset 47px -46px 0px 46px #eaa010, 
+                inset 57px -55px 0px 44px #c78912, 
+                -3px 3px 4px -1px #0003;
 }
 .quarter.bottom-right{
     border-bottom-right-radius: 100%;
     box-shadow: inset -6px -6px 4px -2px #0003, 
-                inset -50px -50px 0px 42px #18a51d, 
-                inset -53px -53px 0px 47px #138817, 
+                inset -50px -50px 0px 42px #4db351, 
+                inset -53px -53px 0px 47px #3f8842, 
                 inset -32px -30px 5px 15px #0003, 
                 6px 6px 4px -1px #0003;
                 cursor: pointer;
 }
 .quarter.bottom-right:active{
-    box-shadow: inset -55px -54px 0px 44px #dcc9c724, 
+    box-shadow: inset -6px -6px 4px -2px #0003, 
                 inset -50px -50px 0px 42px #18a51d, 
                 inset -53px -53px 0px 47px #138817, 
                 inset -32px -30px 5px 15px #0003, 
-                4px 3px 4px -2px #0003;
+                3px 3px 4px -1px #0003
                 
 }
 .quarter.bottom-right.active{
-    box-shadow: inset -55px -54px 0px 44px #dcc9c724, 
+    box-shadow: inset -6px -6px 4px -2px #0003, 
                 inset -50px -50px 0px 42px #18a51d, 
                 inset -53px -53px 0px 47px #138817, 
                 inset -32px -30px 5px 15px #0003, 
-                4px 3px 4px -2px #0003;
+                3px 3px 4px -1px #0003
                 
 }
 
@@ -171,8 +177,8 @@ body {
 #playing {
     text-align: center;
     font-size: 39px;
-    padding-top: 15%;
-    padding-bottom: 31%;
+    padding-top: 33%;
+    padding-bottom: 45%;
     font-weight: bold;
     text-shadow: 0px 0px 1px #6f6f6f;
     background-image: linear-gradient(to bottom, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c9c9c9);
@@ -183,7 +189,7 @@ body {
 }
 
 #result-icon .fa-times {
-    color:red;
+    /*color:red;*/
 }
 
 
@@ -210,7 +216,7 @@ body {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    color: red;
+    /*color: red;*/
     margin: 0;
     text-shadow: 0px 0px 1px #6f6f6f;
     cursor: pointer;
@@ -244,3 +250,15 @@ body {
     box-shadow: 0px 2px 14px 6px #b1b0b0;
     text-transform: uppercase;
 }
+
+#start.disabled {
+background-image: linear-gradient(to top, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c9c9c9);
+    color: #98bb98;
+    cursor: context-menu;
+}
+#failed.disabled {
+background-image: linear-gradient(to top, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c9c9c9);
+    color: #de7f89;
+    cursor: context-menu;
+}
+

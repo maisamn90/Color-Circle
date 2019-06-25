@@ -11,7 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
-    <script src="https://kit.fontawesome.com/18a75bc366.js"></script>
+    
     
     
     <title>Simon Game Online</title>
@@ -45,29 +45,31 @@
                              <div class="bottom-right quarter green-quarter " id="greenButtonId" onclick="getUserPatern(this)"></div>
                         </div>
                     </div>
-                    <div class="middle-box" >
+                    <div class="middle-box" class="hide">
                         <div id="start" onclick="generatePatern();">
                             <p>Start</p>
                             
                         </div>
+                        
                         <div id="playing" class="hide">
-                            <p id="result-icon" class="m-0">
+                            <p id="result-icon" class="m-0 hide">
                                 <i class="fas fa-check"></i>
                             </p>
-                            <p class="level">level : 1</p>
+                            <p class="level">level : <span class="level-num"></span></p>
                         </div>
                         <div id="failed" class="hide">
                             <p id="result-icon" class="m-0">
                                 <i class="fas fa-times"></i>
                             </p>
-                            <p id="try-agian">Try again</p>
-                            <p class="level">level : 1</p>
+                            <p id="try-agian" onclick="generatePatern();">Try again</p>
+                            <p class="level">level : <span class="level-num"></span></p>
                         </div>
                       
                     </div>
             </div>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/18a75bc366.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>
