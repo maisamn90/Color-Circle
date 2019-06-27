@@ -37,13 +37,19 @@ body {
                 -3px -3px 4px -1px #0003;
                 
 }
+.quarter.top-left[disabled]{
+    cursor: context-menu;
+                
+}
+.quarter.top-left[disabled]:active{
+    box-shadow: inset 6px 6px 4px -3px #0003, 
+                inset 47px 46px 0px 46px #89b0ef, 
+                inset 54px 53px 0px 48px #718ab3, 
+                -6px -6px 4px -1px #0003;
+    cursor: context-menu;
+                
+}
 
-/*.quarter.top-left.active{*/
-/*    box-shadow: inset 56px 54px 0px 46px #dcc9c724, */
-/*                inset 47px 46px 0px 46px #4286f4, */
-/*                inset 54px 53px 0px 48px #4286f4, */
-/*                -5px -2px 4px -4px #0003;*/
-/*}*/
 
 .quarter.top-left.active {
     border-top-left-radius: 100%;
@@ -55,7 +61,10 @@ body {
 
 .quarter.top-right {
    border-top-right-radius: 100%;
-   box-shadow: inset -6px 6px 4px -3px #0003, inset -46px 46px 0px 46px #f36758, inset -51px 51px 0px 50px #c55c50, 6px -6px 4px -1px #0003;
+   box-shadow: inset -6px 6px 4px -3px #0003, 
+               inset -46px 46px 0px 46px #f36758, 
+               inset -51px 51px 0px 50px #c55c50, 
+               6px -6px 4px -1px #0003;
                cursor: pointer;
 }
 
@@ -64,6 +73,16 @@ body {
                 inset -46px 46px 0px 46px #e53522, 
                 inset -51px 51px 0px 50px #c32e1d, 
                 3px -3px 4px -1px #0003
+}
+.quarter.top-right[disabled]{
+               cursor: context-menu;
+}
+.quarter.top-right[disabled]:active{
+    box-shadow: inset -6px 6px 4px -3px #0003, 
+               inset -46px 46px 0px 46px #f36758, 
+               inset -51px 51px 0px 50px #c55c50, 
+               6px -6px 4px -1px #0003;
+               cursor: context-menu;
 }
 .quarter.top-right.active{
     box-shadow: inset -6px 6px 4px -3px #0003, 
@@ -75,9 +94,9 @@ body {
 .quarter.bottom-left{
     border-bottom-left-radius: 100%;
     box-shadow: inset 6px -6px 4px -2px #0003, 
-    inset 47px -46px 0px 46px #f5bb4c, 
-    inset 57px -55px 0px 44px #dcaa49, 
-    -5px 6px 4px -1px #0003;
+                inset 47px -46px 0px 46px #f5bb4c, 
+                inset 57px -55px 0px 44px #dcaa49, 
+                -5px 6px 4px -1px #0003;
     cursor: pointer;
 }
 .quarter.bottom-left:active{
@@ -85,6 +104,16 @@ body {
                 inset 47px -46px 0px 46px #eaa010, 
                 inset 57px -55px 0px 44px #c78912, 
                 -3px 3px 4px -1px #0003;
+}
+.quarter.bottom-left[disabled]{
+    cursor: context-menu;
+}
+.quarter.bottom-left[disabled]:active{
+    box-shadow: inset 6px -6px 4px -2px #0003, 
+                inset 47px -46px 0px 46px #f5bb4c, 
+                inset 57px -55px 0px 44px #dcaa49, 
+                -5px 6px 4px -1px #0003;
+    cursor: context-menu;
 }
 .quarter.bottom-left.active{
     box-shadow: inset 6px -6px 4px -2px #0003, 
@@ -99,7 +128,7 @@ body {
                 inset -53px -53px 0px 47px #3f8842, 
                 inset -32px -30px 5px 15px #0003, 
                 6px 6px 4px -1px #0003;
-                cursor: pointer;
+    cursor: pointer;
 }
 .quarter.bottom-right:active{
     box-shadow: inset -6px -6px 4px -2px #0003, 
@@ -107,6 +136,18 @@ body {
                 inset -53px -53px 0px 47px #138817, 
                 inset -32px -30px 5px 15px #0003, 
                 3px 3px 4px -1px #0003
+                
+}
+.quarter.bottom-right[disabled]{
+    cursor:context-menu;
+}
+.quarter.bottom-right[disabled]:active{
+    box-shadow: inset -6px -6px 4px -2px #0003, 
+                inset -50px -50px 0px 42px #4db351, 
+                inset -53px -53px 0px 47px #3f8842, 
+                inset -32px -30px 5px 15px #0003, 
+                6px 6px 4px -1px #0003;
+    cursor: context-menu;
                 
 }
 .quarter.bottom-right.active{
@@ -285,8 +326,8 @@ background-image: linear-gradient(to top, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c
     border-radius: 0;
     margin-top: -10px;
     z-index: 1;
-    background-color: rgb(33, 150, 243);
-    font-size: 44px;
+    background-color: #28a745;
+    font-size: 30px;
     padding: 28px 0;
     font-weight: 300;
 }
@@ -296,7 +337,7 @@ background-image: linear-gradient(to top, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c
     overflow: auto;
 }
 .list-group-item{
-    background-color: transparent;
+    background-color: #e6e6e6ad;
     border: 1px solid rgba(255, 255, 255, 0.45);
     color: #797979;
 }

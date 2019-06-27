@@ -3,7 +3,9 @@ var startTime;
 var endTime;
 var singleLevelTime = 0;
 var totaLtime = 0;
+disabledButtons();
      async function generatePatern(){
+         
          $("#start").addClass("disabled");
          $("#failed").addClass("disabled");
         await sleep(500);
@@ -18,6 +20,7 @@ var totaLtime = 0;
            for (j ; j< paternlength; j++){
                var x = Math.floor((Math.random() * 4) + 1);
                patern.push(x);
+               disabledButtons();
                $(".level-num").text(paternlength);
                  // document.getElementById("demo").innerHTML = "[" + patern + "]";
                   if (patern.length == paternlength){
@@ -56,6 +59,8 @@ var totaLtime = 0;
                   }
                       
                    startTime =  new Date();
+                   
+         enableButtons();
                    return patern;
                 }
             }
@@ -112,6 +117,7 @@ var totaLtime = 0;
                      if (generatedPatern.toString() == userPatern.toString()){
                          //alert("Success");
                         // $(".level").append("<i class='fas fa-check'></i>");
+                        disabledButtons();
                         $("#result-icon").removeClass("hide");
                         $(".level").addClass("hide");await sleep(1000);
                         $("#result-icon").addClass("hide");
@@ -124,20 +130,32 @@ var totaLtime = 0;
                          singleLevelTime = (levelTime - 1000) /1000;
                          totaLtime += singleLevelTime;
                          console.log(totaLtime);
-                         $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-check text-success mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime +"<sub>s</sub></li>");
+                         $(".list-group-flush").prepend("<li class='list-group-item'><i class='fas fa-check text-success mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime +"<sub>s</sub></li>");
                          generatePatern();
                          
                      }
                      else{
                          $("#playing").addClass("hide");
                          $("#failed").removeClass("hide");
+                         disabledButtons();
                         // alert("Not");
                           //document.getElementById("demo").innerHTML = "";
                           inputPatern = [];
                           generatedPatern = [];
                           patern = [];
-                          $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime +"<sub>s</sub></li>");
+                           $(".list-group-flush").prepend("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
+                           if (generatedPaternLength - 1 == 1){
+                                  $(".total-result").html(  "<strong>" + (generatedPaternLength - 1) +"</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
+                              }
+                              else if (generatedPaternLength - 1 < 1){
+                                  $(".total-result").html("No level have been solved");
+                                  $(".card-header.total-result").css("background-color","red")
+                              } else{
+                                  $(".total-result").html(  "<strong>" + (generatedPaternLength - 1) +"</strong>" + " levels - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
+                              }
+                           
                           $("#performance").removeClass("hide");
+                          $('#performance-modal').modal('show');
                           //document.getElementById("start").disabled = false;
                      }
                  
@@ -151,12 +169,22 @@ var totaLtime = 0;
                           
                           else {
                                $("#playing").addClass("hide");
+                               disabledButtons();
                          $("#failed").removeClass("hide");
                               //alert("wrong input");
-                              $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
-                              $(".total-result").html(  generatedPaternLength - 1 + "<sub>L</sub> / " + totaLtime + "<sub>S</sub>")
-                          $("#performance").removeClass("hide");
+                              $(".list-group-flush").prepend("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
+                             if (generatedPaternLength - 1 == 1){
+                                  $(".total-result").html(  "<strong>" + (generatedPaternLength - 1) +"</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
+                              }
+                              else if (generatedPaternLength - 1 < 1){
+                                  $(".total-result").html("No level have been solved");
+                                  $(".card-header.total-result").css("background-color","red")
+                              } else{
+                                  $(".total-result").html(  "<strong>" + (generatedPaternLength - 1) +"</strong>" + " levels - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
+                              }
                           
+                          $("#performance").removeClass("hide");
+                          $('.modal').modal('show');
                               generatedPatern = [];
                               inputPatern = [];
                               patern = [];
@@ -178,7 +206,42 @@ var totaLtime = 0;
             return new Promise(resolve => setTimeout(resolve, ms));
             }
             
+            $("#failed").on("click", function(){
+                $(".total-result").html("");
+                $("ul").html("");
+                $("#performance").addClass("hide");
+                totaLtime =0;
+                generatePatern();
+            });
+            
+            
+            function disabledButtons(){
+                $(".blue-quarter").removeAttr("onclick");
+                $(".blue-quarter").attr("disabled","disabled");
+                
+                $(".red-quarter").removeAttr("onclick");
+                $(".red-quarter").attr("disabled","disabled");
+                
+                $(".green-quarter").removeAttr("onclick");
+                $(".green-quarter").attr("disabled","disabled");
+                
+                $(".yellow-quarter").removeAttr("onclick");
+                $(".yellow-quarter").attr("disabled","disabled");
+            }
+            
+            function enableButtons(){
+                $(".blue-quarter").attr("onclick","getUserPatern(this)");
+                $(".blue-quarter").removeAttr("disabled","disabled");
+                
+                $(".red-quarter").attr("onclick","getUserPatern(this)");
+                $(".red-quarter").removeAttr("disabled","disabled");
+                
+                $(".green-quarter").attr("onclick","getUserPatern(this)");
+                $(".green-quarter").removeAttr("disabled","disabled");
+                
+                $(".yellow-quarter").attr("onclick","getUserPatern(this)");
+                $(".yellow-quarter").removeAttr("disabled","disabled");
+            }
          
-
-            
-            
+    
+          
