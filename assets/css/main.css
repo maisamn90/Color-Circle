@@ -342,23 +342,33 @@ background-image: linear-gradient(to top, #f9f9f9, #ededed, #e1e1e1, #d5d5d5, #c
     color: #797979;
 }
 
-/* width */
 .card-body::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 .card-body::-webkit-scrollbar-track {
   background: transparent; 
 }
- 
-/* Handle */
+
 .card-body::-webkit-scrollbar-thumb {
   background: #cecbcb; 
   border-radius: 5px;
 }
 
-/* Handle on hover */
 .card-body::-webkit-scrollbar-thumb:hover {
   background: #b1b1b1; 
+}
+
+.btn-fb {
+    background-color: #3b5998;
+    color: #ffffff;
+}
+
+.btn-fb:hover {
+    background-color: #2b4273;
+    color: #ffffff;
+}
+
+.modal-footer{
+    justify-content: center;
 }

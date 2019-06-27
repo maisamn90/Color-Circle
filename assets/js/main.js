@@ -130,7 +130,7 @@ disabledButtons();
                          singleLevelTime = (levelTime - 1000) /1000;
                          totaLtime += singleLevelTime;
                          console.log(totaLtime);
-                         $(".list-group-flush").prepend("<li class='list-group-item'><i class='fas fa-check text-success mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime +"<sub>s</sub></li>");
+                         $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-check text-success mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime +"<sub>s</sub></li>");
                          generatePatern();
                          
                      }
@@ -143,7 +143,9 @@ disabledButtons();
                           inputPatern = [];
                           generatedPatern = [];
                           patern = [];
-                           $(".list-group-flush").prepend("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
+                          var result = (generatedPaternLength - 1) + " level - during " + totaLtime.toFixed(2) + "s";
+                          $("meta[name='fbTitle]").attr("content", result );
+                           $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
                            if (generatedPaternLength - 1 == 1){
                                   $(".total-result").html(  "<strong>" + (generatedPaternLength - 1) +"</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
                               }
@@ -153,9 +155,9 @@ disabledButtons();
                               } else{
                                   $(".total-result").html(  "<strong>" + (generatedPaternLength - 1) +"</strong>" + " levels - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
                               }
-                           
                           $("#performance").removeClass("hide");
                           $('#performance-modal').modal('show');
+                          
                           //document.getElementById("start").disabled = false;
                      }
                  
@@ -171,8 +173,10 @@ disabledButtons();
                                $("#playing").addClass("hide");
                                disabledButtons();
                          $("#failed").removeClass("hide");
+                         result = (generatedPaternLength - 1) + " level - during " + totaLtime.toFixed(2) + "s";
+                         $("meta[name='fbTitle']").attr("content", result );
                               //alert("wrong input");
-                              $(".list-group-flush").prepend("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
+                              $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
                              if (generatedPaternLength - 1 == 1){
                                   $(".total-result").html(  "<strong>" + (generatedPaternLength - 1) +"</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
                               }
@@ -181,8 +185,10 @@ disabledButtons();
                                   $(".card-header.total-result").css("background-color","red")
                               } else{
                                   $(".total-result").html(  "<strong>" + (generatedPaternLength - 1) +"</strong>" + " levels - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
+                                  
+                                  
                               }
-                          
+                              
                           $("#performance").removeClass("hide");
                           $('.modal').modal('show');
                               generatedPatern = [];
@@ -242,6 +248,10 @@ disabledButtons();
                 $(".yellow-quarter").attr("onclick","getUserPatern(this)");
                 $(".yellow-quarter").removeAttr("disabled","disabled");
             }
-         
-    
+
+            // function metaDesc() {
+            //     var desc = "<strong>" + (generatedPaternLength - 1) +"</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>";
+            //     console.log(desc);
+            //     $("meta[property='og\\:description']").attr("content", desc );
+            //     }
           
