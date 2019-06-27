@@ -144,6 +144,7 @@ disabledButtons();
                           generatedPatern = [];
                           patern = [];
                           var result = (generatedPaternLength - 1) + " level - during " + totaLtime.toFixed(2) + "s";
+                          alert( $("meta[name='fbTitle]").attr("content"));
                           $("meta[name='fbTitle]").attr("content", result );
                            $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
                            if (generatedPaternLength - 1 == 1){
@@ -175,6 +176,7 @@ disabledButtons();
                          $("#failed").removeClass("hide");
                          result = (generatedPaternLength - 1) + " level - during " + totaLtime.toFixed(2) + "s";
                          $("meta[name='fbTitle']").attr("content", result );
+                         alert( $("meta[name='fbTitle']").attr("content"));
                               //alert("wrong input");
                               $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength  + "</li>");
                              if (generatedPaternLength - 1 == 1){
