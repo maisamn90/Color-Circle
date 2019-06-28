@@ -249,3 +249,9 @@ function enableButtons() {
     $(".yellow-quarter").attr("onclick", "getUserPatern(this)");
     $(".yellow-quarter").removeAttr("disabled", "disabled");
 }
+
+/////////////////
+
+$("#btn-setting").on("click", function () {
+    $(".floating-btn").toggleClass("up",1000);
+});
