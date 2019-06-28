@@ -145,9 +145,6 @@ async function checkPaternsLenght(userPatern, generatedPatern) {
             inputPatern = [];
             generatedPatern = [];
             patern = [];
-            var result = (generatedPaternLength - 1) + " level - during " + totaLtime.toFixed(2) + "s";
-            alert($("meta[name='fbDescription]").attr("content"));
-            $("meta[name='fbDescription]").attr("content", result);
             $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength + "</li>");
             if (generatedPaternLength - 1 == 1) {
                 $(".total-result").html("<strong>" + (generatedPaternLength - 1) + "</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
@@ -178,8 +175,6 @@ async function checkPaternsLenght(userPatern, generatedPatern) {
                 disabledButtons();
                 $("#failed").removeClass("hide");
                 result = (generatedPaternLength - 1) + " level - during " + totaLtime.toFixed(2) + "s";
-                $("meta[name='fbDescription']").attr("content", result);
-                alert($("meta[name='fbDescription']").attr("content"));
                 //alert("wrong input");
                 $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength + "</li>");
                 if (generatedPaternLength - 1 == 1) {
@@ -254,48 +249,3 @@ function enableButtons() {
     $(".yellow-quarter").attr("onclick", "getUserPatern(this)");
     $(".yellow-quarter").removeAttr("disabled", "disabled");
 }
-
-// function metaDesc() {
-//     var desc = "<strong>" + (generatedPaternLength - 1) +"</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>";
-//     console.log(desc);
-//     $("meta[property='og\\:description']").attr("content", desc );
-//     }
-$("#testButton").on("click", function() {
-    // FB.ui({
-    //     method: 'share_open_graph',
-    //     // action_type: 'og.likes',
-    //     // action_properties: JSON.stringify({
-    //     //     object: 'https://maisamn90.github.io/Simon-game/',
-    //     // })
-    //     action_type: 'og.shares',
-    // action_properties: JSON.stringify({
-    //     object : {
-    //       'og:url': 'https://maisamn90.github.io/Simon-game/', // your url to share
-    //       'og:title': 'Here my custom title',
-    //       'og:description': 'here custom description',
-    //       'og:image': 'https://maisamn90.github.io/Simon-game/rosie.jpg'
-    //     }
-    // })
-    // }, function(response) {
-    //     // Debug response (optional)
-    //     console.log(response);
-    // });
-    
-    
-    FB.ui({ method: 'feed',
-    link: 'https://maisamn90.github.io/Simon-game/',
-    picture: 'https://maisamn90.github.io/Simon-game/rosie.jpg',
-    name: 'I scored 10 points on this ridiculous game...',
-    description: 'Description',
-    actions: [
-        { name: 'Name of my site', link: 'https://maisamn90.github.io/Simon-game/' }
-    ],
-    display: 'popup'
-  }, function (response)
-  {
-    if (response && response.post_id)
-    {
-        // handle response
-    }
-  });  
-});
