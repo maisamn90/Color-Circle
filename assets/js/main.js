@@ -263,10 +263,19 @@ function enableButtons() {
 $("#testButton").on("click", function() {
     FB.ui({
         method: 'share_open_graph',
-        action_type: 'og.likes',
-        action_properties: JSON.stringify({
-            object: 'https://maisamn90.github.io/Simon-game/',
-        })
+        // action_type: 'og.likes',
+        // action_properties: JSON.stringify({
+        //     object: 'https://maisamn90.github.io/Simon-game/',
+        // })
+        action_type: 'og.shares',
+    action_properties: JSON.stringify({
+        object : {
+           'og:url': 'https://maisamn90.github.io/Simon-game/', // your url to share
+           'og:title': 'Here my custom title',
+           'og:description': 'here custom description',
+           'og:image': 'https://maisamn90.github.io/Simon-game/rosie.jpg'
+        }
+    })
     }, function(response) {
         // Debug response (optional)
         console.log(response);
