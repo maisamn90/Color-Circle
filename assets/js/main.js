@@ -29,6 +29,7 @@ async function generatePatern() {
                     if (patern[l] == 1) {
                         $(".active").removeClass("active");
                         $(".blue-quarter").addClass("active");
+                        // $("#blue-audio").play();
                         //   removeActiveClass(3000);
                         setTimeout(removeActiveClass, 500);
                         await sleep(1000);
@@ -92,6 +93,7 @@ function getUserPatern(button) {
     else
     if (button != null && button.id == blueButton.id) {
         // alert ("Blue is clicked");
+        // $("#blue-audio").play;
         inputPatern.push(1);
         checkPaternsLenght(inputPatern, generatedPatern);
         return inputPatern;
@@ -255,3 +257,32 @@ function enableButtons() {
 $("#btn-setting").on("click", function () {
     $(".floating-btn").toggleClass("up",1000);
 });
+
+$("#solid-grey").on("click", function() {
+    $("body").css("background-image", "none");
+    $("body").css("background-color", "#D1D1D1");
+    
+    
+});
+
+$("#gradient-grey").on("click", function() {
+    $("body").css("background-image", "linear-gradient(to right bottom, #9f9f9f, #b0b0b0, #c2c2c2, #d4d4d4, #e6e6e6, #e8e8e8, #ebeaeb, #edeced, #e0dedf, #d3d1d1, #c6c3c4, #b9b6b6)")
+});
+
+$("#gradient-colored").on("click", function() {
+    $("body").css("background-image", "linear-gradient(to right bottom, #e84b3a, #ed467a, #d45eb1, #a37ad6, #6490e2, #08a0e1, #00abd2, #00b3bb, #19bc98, #69be65, #adb92c, #f4a610)")
+});
+
+$("#gradient-greenBlue").on("click", function() {
+    $("body").css("background-image", "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)")
+});
+
+var menu = document.getElementById("floating-menu");
+var btns = menu.getElementsByClassName("floating-btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("selected");
+  current[0].className = current[0].className.replace("selected", "");
+  this.className += " selected";
+  });
+}

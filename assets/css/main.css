@@ -1,3 +1,5 @@
+@import url("https://use.fontawesome.com/releases/v5.9.0/css/all.css");
+
 body {
     background-image: linear-gradient(to right bottom, #e84b3a, #ed467a, #d45eb1, #a37ad6, #6490e2, #08a0e1, #00abd2, #00b3bb, #19bc98, #69be65, #adb92c, #f4a610);
     height: 100vh;
@@ -380,15 +382,6 @@ body {
     background: #b1b1b1;
 }
 
-.btn-fb {
-    background-color: #3b5998;
-    color: #ffffff;
-}
-
-.btn-fb:hover {
-    background-color: #2b4273;
-    color: #ffffff;
-}
 
 .modal-footer {
     justify-content: center;
@@ -455,4 +448,24 @@ body {
 #solid-grey {
     background-color: #D1D1D1;
     
+}
+
+#gradient-greenBlue.up{
+    bottom: 240px;
+    display: block;
+}
+
+#gradient-greenBlue{
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.floating-btn.selected::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    font-weight: 600;
+    color: #fff;
+}
+
+audio {
+    display:none;
 }
