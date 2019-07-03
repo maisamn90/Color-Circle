@@ -4,6 +4,7 @@ var endTime;
 var singleLevelTime = 0;
 var totaLtime = 0;
 disabledButtons();
+
 async function generatePatern() {
 
     $("#start").addClass("disabled");
@@ -29,7 +30,7 @@ async function generatePatern() {
                     if (patern[l] == 1) {
                         $(".active").removeClass("active");
                         $(".blue-quarter").addClass("active");
-                        // $("#blue-audio").play();
+                        document.getElementById("blue-audio").play();
                         //   removeActiveClass(3000);
                         setTimeout(removeActiveClass, 500);
                         await sleep(1000);
@@ -38,12 +39,14 @@ async function generatePatern() {
                     else if (patern[l] == 2) {
                         $(".active").removeClass("active");
                         $(".red-quarter").addClass("active");
+                        document.getElementById("red-audio").play();
                         setTimeout(removeActiveClass, 500);
                         await sleep(1000);
                     }
                     else if (patern[l] == 3) {
                         $(".active").removeClass("active");
                         $(".green-quarter").addClass("active");
+                        document.getElementById("green-audio").play();
                         setTimeout(removeActiveClass, 500);
                         await sleep(1000);
                     }
@@ -51,6 +54,7 @@ async function generatePatern() {
                         if (patern[l] == 4) {
                             $(".active").removeClass("active");
                             $(".yellow-quarter").addClass("active");
+                            document.getElementById("yellow-audio").play();
                             setTimeout(removeActiveClass, 500);
                             await sleep(1000);
                         }
@@ -79,6 +83,7 @@ function getUserPatern(button) {
     var orangeButton = document.getElementById("orangeButtonId");
     if (button != null && button.id == redButton.id) {
         // alert ("Red is clicked");
+        document.getElementById("red-audio").play();
         inputPatern.push(2);
         checkPaternsLenght(inputPatern, generatedPatern);
         return inputPatern;
@@ -86,6 +91,7 @@ function getUserPatern(button) {
     else
     if (button != null && button.id == greenButton.id) {
         //alert ("green is clicked");
+        document.getElementById("green-audio").play();
         inputPatern.push(3);
         checkPaternsLenght(inputPatern, generatedPatern);
         return inputPatern;
@@ -93,7 +99,7 @@ function getUserPatern(button) {
     else
     if (button != null && button.id == blueButton.id) {
         // alert ("Blue is clicked");
-        // $("#blue-audio").play;
+        document.getElementById("blue-audio").play();
         inputPatern.push(1);
         checkPaternsLenght(inputPatern, generatedPatern);
         return inputPatern;
@@ -101,6 +107,7 @@ function getUserPatern(button) {
     else
     if (button != null && button.id == orangeButton.id) {
         // alert ("Orange is clicked");
+        document.getElementById("yellow-audio").play();
         inputPatern.push(4);
         checkPaternsLenght(inputPatern, generatedPatern);
         return inputPatern;
@@ -143,6 +150,7 @@ async function checkPaternsLenght(userPatern, generatedPatern) {
             $("#failed").removeClass("hide");
             disabledButtons();
             // alert("Not");
+            wrongInput();
             //document.getElementById("demo").innerHTML = "";
             inputPatern = [];
             generatedPatern = [];
@@ -178,6 +186,8 @@ async function checkPaternsLenght(userPatern, generatedPatern) {
                 $("#failed").removeClass("hide");
                 result = (generatedPaternLength - 1) + " level - during " + totaLtime.toFixed(2) + "s";
                 //alert("wrong input");
+                wrongInput();
+                
                 $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength + "</li>");
                 if (generatedPaternLength - 1 == 1) {
                     $(".total-result").html("<strong>" + (generatedPaternLength - 1) + "</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
@@ -220,6 +230,20 @@ $("#failed").on("click", function() {
     $("ul").html("");
     $("#performance").addClass("hide");
     totaLtime = 0;
+    if ($("#sound-btn").hasClass("selected")){
+    document.getElementById("red-audio").muted = true;
+    document.getElementById("blue-audio").muted = true;
+    document.getElementById("green-audio").muted = true;
+    document.getElementById("yellow-audio").muted = true;
+    document.getElementById("wrong-audio").muted = true;
+    }
+    else{
+    document.getElementById("red-audio").muted = false;
+    document.getElementById("blue-audio").muted = false;
+    document.getElementById("green-audio").muted = false;
+    document.getElementById("yellow-audio").muted = false;
+    document.getElementById("wrong-audio").muted = false;
+    }
     generatePatern();
 });
 
@@ -266,19 +290,19 @@ $("#solid-grey").on("click", function() {
 });
 
 $("#gradient-grey").on("click", function() {
-    $("body").css("background-image", "linear-gradient(to right bottom, #9f9f9f, #b0b0b0, #c2c2c2, #d4d4d4, #e6e6e6, #e8e8e8, #ebeaeb, #edeced, #e0dedf, #d3d1d1, #c6c3c4, #b9b6b6)")
+    $("body").css("background-image", "linear-gradient(to right bottom, #414141, #5a5a5a, #757575, #909090, #adadad, #adadad, #aeaeae, #aeaeae, #929292, #777777, #5d5d5d, #444444)")
 });
 
 $("#gradient-colored").on("click", function() {
-    $("body").css("background-image", "linear-gradient(to right bottom, #e84b3a, #ed467a, #d45eb1, #a37ad6, #6490e2, #08a0e1, #00abd2, #00b3bb, #19bc98, #69be65, #adb92c, #f4a610)")
+    $("body").css("background-image", "linear-gradient(to right bottom, #e84b3a, #ed467a, #d45eb1, #a37ad6, #6490e2, #08a0e1, #00abd2, #00b3bb, #19bc98, #69be65, #adb92c, #f4a610)");
 });
 
 $("#gradient-greenBlue").on("click", function() {
     $("body").css("background-image", "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)")
 });
 
-var menu = document.getElementById("floating-menu");
-var btns = menu.getElementsByClassName("floating-btn");
+var menu = document.getElementById("bg-menu");
+var btns = menu.getElementsByClassName("bg-menu-item");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
   var current = document.getElementsByClassName("selected");
@@ -286,3 +310,36 @@ for (var i = 0; i < btns.length; i++) {
   this.className += " selected";
   });
 }
+
+function wrongInput(){
+    document.getElementById("red-audio").muted = true;
+    document.getElementById("blue-audio").muted = true;
+    document.getElementById("green-audio").muted = true;
+    document.getElementById("yellow-audio").muted = true;
+    document.getElementById("wrong-audio").play();
+}
+
+$("#sound-btn").on("click", function() {
+    $(this).toggleClass("selected");
+    if ($(this).hasClass("selected")){
+        document.getElementById("red-audio").muted = true;
+    document.getElementById("blue-audio").muted = true;
+    document.getElementById("green-audio").muted = true;
+    document.getElementById("yellow-audio").muted = true;
+    document.getElementById("wrong-audio").muted = true;
+    }
+    else {
+        document.getElementById("red-audio").muted = false;
+        document.getElementById("blue-audio").muted = false;
+        document.getElementById("green-audio").muted = false;
+        document.getElementById("yellow-audio").muted = false;
+        document.getElementById("wrong-audio").muted = false;
+    }
+})
+
+$(".container-fluid").on("click", function() {
+    if ($(".floating-btn").hasClass("up"))
+    {
+        $(".floating-btn").removeClass("up");
+    }
+})

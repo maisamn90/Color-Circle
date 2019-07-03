@@ -7,10 +7,21 @@ body {
 
 /***********************************************Coloring*/
 
+h1.white-text {
+    font-size: 3vw;
+}
 .white-text {
     color: #ffffff;
+    text-shadow: 1px 1px 10px #000;
 }
 
+button:focus{
+    outline-color: transparent !important;
+}
+
+.container-fluid{
+        height: 93vh;
+}
 /************************************************Rounding*/
 
 .quarter {
@@ -465,6 +476,29 @@ body {
     font-weight: 600;
     color: #fff;
 }
+
+#sound-btn.selected::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f6a9";
+    color: #fff;
+}
+#sound-btn::after {
+
+    font-family: "Font Awesome 5 Free";
+    content: "\f028";
+    font-weight: 600;
+    color: #fff;
+}
+
+#sound-btn.up{
+    bottom: -6px;
+    display: block;
+    left: 69px;
+}
+#sound-btn{
+    background-color: #28a745;
+}
+
 
 audio {
     display:none;
