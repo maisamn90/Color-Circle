@@ -6,10 +6,6 @@ body {
 }
 
 /***********************************************Coloring*/
-
-h1.white-text {
-    font-size: 3vw;
-}
 .white-text {
     color: #ffffff;
     text-shadow: 1px 1px 10px #000;
@@ -20,7 +16,11 @@ button:focus{
 }
 
 .container-fluid{
-        height: 93vh;
+        height: 90vh;
+}
+
+.inner-content{
+    height: 70vh;
 }
 /************************************************Rounding*/
 
@@ -225,6 +225,10 @@ button:focus{
     .level {
         font-size: 15px!important;
         padding: 3px 18px!important;
+    }
+    
+    h1.white-text{
+        font-size: 30px;
     }
 }
 
@@ -502,4 +506,9 @@ button:focus{
 
 audio {
     display:none;
+}
+#end-tour{
+    position: absolute;
+    top: 50%;
+    right: 60%;
 }

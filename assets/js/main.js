@@ -1,3 +1,9 @@
+ $(document).ready(function(){
+   $(".floating-btn").tooltip();
+   tour.end()
+});
+
+
 var patern = [];
 var startTime;
 var endTime;
@@ -6,7 +12,18 @@ var totaLtime = 0;
 disabledButtons();
 
 async function generatePatern() {
-
+    if (tour.ended() == false){
+        // alert(tour.ended())
+        $(".active").removeClass("active");
+                        await sleep(1000);
+                        $(".red-quarter").addClass("active");
+                        document.getElementById("red-audio").play();
+                        setTimeout(removeActiveClass, 500);
+                        await sleep(1000);
+                        enableButtons();
+    }else
+    {
+    $("#tour-btn").addClass("hide")
     $("#start").addClass("disabled");
     $("#failed").addClass("disabled");
     await sleep(500);
@@ -70,18 +87,22 @@ async function generatePatern() {
         }
     }
 }
-
+}
 
 var inputPatern = [];
 
 function getUserPatern(button) {
+    
     var generatedPatern = patern;
 
     var redButton = document.getElementById("redButtonId");
     var greenButton = document.getElementById("greenButtonId");
     var blueButton = document.getElementById("blueButtonId");
     var orangeButton = document.getElementById("orangeButtonId");
-    if (button != null && button.id == redButton.id) {
+    if (button.id == redButton.id && tour.ended() == false){
+        $("#performance").addClass("hide");
+    }
+    if (button != null && button.id == redButton.id && tour.ended() == true) {
         // alert ("Red is clicked");
         document.getElementById("red-audio").play();
         inputPatern.push(2);
@@ -334,12 +355,65 @@ $("#sound-btn").on("click", function() {
         document.getElementById("green-audio").muted = false;
         document.getElementById("yellow-audio").muted = false;
         document.getElementById("wrong-audio").muted = false;
+        
     }
-})
+});
 
 $(".container-fluid").on("click", function() {
     if ($(".floating-btn").hasClass("up"))
     {
         $(".floating-btn").removeClass("up");
     }
-})
+});
+
+///////////////////////////
+var hideBtns = function(){
+    $("[data-role='next'],[data-role='prev'],[data-role='pause-resume'],.popover .arrow").hide();
+};
+
+var hideRightLeftBtn = function(){
+   $("[data-role='next'],[data-role='prev'],[data-role='pause-resume']").hide();
+};
+
+var tour = new Tour({
+
+    steps: [
+      {
+        element: "#game-tools",
+        title: "Simon Game online",
+        content: "In this game you have to use your memory to match the colores that appear on the colored weel",
+        placement:"top"
+      },
+      {
+        title: "First Step",
+        element: ".middle-box",
+        content: "Press Here to start the game",
+        reflex: true,
+        onShown: hideRightLeftBtn,
+        placement:"top"
+      },
+      {
+        title: "second Step",
+        element: "#redButtonId",
+        content: "Wait a second to see the color then press on it to match",
+        reflex: true,
+        onShown: hideRightLeftBtn,
+        placement:"top"
+      },
+      {
+        
+        element: "#end-tour",
+        content: "Note: The sequence will increase by one in every correct match you made. GOOD JOB now you are ready to play",
+        onShown: hideBtns
+      }
+      
+    ],
+     backdrop: true,
+     storage: false
+});
+    $("#tour-btn").on("click", function() {
+        tour.init();
+        tour.start(true);
+        
+});
+
