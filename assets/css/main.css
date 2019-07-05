@@ -22,6 +22,8 @@ button:focus{
 .inner-content{
     height: 70vh;
 }
+
+
 /************************************************Rounding*/
 
 .quarter {
@@ -40,6 +42,10 @@ button:focus{
 
 .quarter.top-left {
     border-top-left-radius: 100%;
+    -webkit-box-shadow:inset 6px 6px 4px -3px #0003,
+    inset 47px 46px 0px 46px #89b0ef,
+    inset 54px 53px 0px 48px #718ab3,
+    -6px -6px 4px -1px #0003;
     box-shadow: inset 6px 6px 4px -3px #0003,
     inset 47px 46px 0px 46px #89b0ef,
     inset 54px 53px 0px 48px #718ab3,
@@ -48,6 +54,10 @@ button:focus{
 }
 
 .quarter.top-left:active {
+    -webkit-box-shadow:inset 6px 6px 4px -3px #0003,
+    inset 47px 46px 0px 46px #4286f4,
+    inset 54px 53px 0px 48px #285eb5,
+    -3px -3px 4px -1px #0003;
     box-shadow: inset 6px 6px 4px -3px #0003,
     inset 47px 46px 0px 46px #4286f4,
     inset 54px 53px 0px 48px #285eb5,
@@ -61,6 +71,10 @@ button:focus{
 }
 
 .quarter.top-left[disabled]:active {
+    -webkit-box-shadow: inset 6px 6px 4px -3px #0003,
+    inset 47px 46px 0px 46px #89b0ef,
+    inset 54px 53px 0px 48px #718ab3,
+    -6px -6px 4px -1px #0003;
     box-shadow: inset 6px 6px 4px -3px #0003,
     inset 47px 46px 0px 46px #89b0ef,
     inset 54px 53px 0px 48px #718ab3,
@@ -72,6 +86,10 @@ button:focus{
 
 .quarter.top-left.active {
     border-top-left-radius: 100%;
+    -webkit-box-shadow:inset 6px 6px 4px -3px #0003,
+    inset 47px 46px 0px 46px #4286f4,
+    inset 54px 53px 0px 48px #285eb5,
+    -3px -3px 4px -1px #0003;
     box-shadow: inset 6px 6px 4px -3px #0003,
     inset 47px 46px 0px 46px #4286f4,
     inset 54px 53px 0px 48px #285eb5,
@@ -80,6 +98,10 @@ button:focus{
 
 .quarter.top-right {
     border-top-right-radius: 100%;
+    -webkit-box-shadow: inset -6px 6px 4px -3px #0003,
+    inset -46px 46px 0px 46px #f36758,
+    inset -51px 51px 0px 50px #c55c50,
+    6px -6px 4px -1px #0003;
     box-shadow: inset -6px 6px 4px -3px #0003,
     inset -46px 46px 0px 46px #f36758,
     inset -51px 51px 0px 50px #c55c50,
@@ -88,10 +110,14 @@ button:focus{
 }
 
 .quarter.top-right:active {
+    -webkit-box-shadow:inset -6px 6px 4px -3px #0003,
+    inset -46px 46px 0px 46px #e53522,
+    inset -51px 51px 0px 50px #c32e1d,
+    3px -3px 4px -1px #0003;;
     box-shadow: inset -6px 6px 4px -3px #0003,
     inset -46px 46px 0px 46px #e53522,
     inset -51px 51px 0px 50px #c32e1d,
-    3px -3px 4px -1px #0003
+    3px -3px 4px -1px #0003;
 }
 
 .quarter.top-right[disabled] {
@@ -107,10 +133,14 @@ button:focus{
 }
 
 .quarter.top-right.active {
+    -webkit-box-shadow:inset -6px 6px 4px -3px #0003,
+    inset -46px 46px 0px 46px #e53522,
+    inset -51px 51px 0px 50px #c32e1d,
+    3px -3px 4px -1px #0003;
     box-shadow: inset -6px 6px 4px -3px #0003,
     inset -46px 46px 0px 46px #e53522,
     inset -51px 51px 0px 50px #c32e1d,
-    3px -3px 4px -1px #0003
+    3px -3px 4px -1px #0003;
 }
 
 .quarter.bottom-left {
@@ -123,6 +153,10 @@ button:focus{
 }
 
 .quarter.bottom-left:active {
+    -webkit-box-shadow:inset 6px -6px 4px -2px #0003,
+    inset 47px -46px 0px 46px #eaa010,
+    inset 57px -55px 0px 44px #c78912,
+    -3px 3px 4px -1px #0003;
     box-shadow: inset 6px -6px 4px -2px #0003,
     inset 47px -46px 0px 46px #eaa010,
     inset 57px -55px 0px 44px #c78912,
@@ -134,6 +168,10 @@ button:focus{
 }
 
 .quarter.bottom-left[disabled]:active {
+    -webkit-box-shadow: inset 6px -6px 4px -2px #0003,
+    inset 47px -46px 0px 46px #f5bb4c,
+    inset 57px -55px 0px 44px #dcaa49,
+    -5px 6px 4px -1px #0003;
     box-shadow: inset 6px -6px 4px -2px #0003,
     inset 47px -46px 0px 46px #f5bb4c,
     inset 57px -55px 0px 44px #dcaa49,
@@ -142,6 +180,10 @@ button:focus{
 }
 
 .quarter.bottom-left.active {
+    -webkit-box-shadow:inset 6px -6px 4px -2px #0003,
+    inset 47px -46px 0px 46px #eaa010,
+    inset 57px -55px 0px 44px #c78912,
+    -3px 3px 4px -1px #0003;
     box-shadow: inset 6px -6px 4px -2px #0003,
     inset 47px -46px 0px 46px #eaa010,
     inset 57px -55px 0px 44px #c78912,
@@ -150,6 +192,11 @@ button:focus{
 
 .quarter.bottom-right {
     border-bottom-right-radius: 100%;
+    -webkit-box-shadow:inset -6px -6px 4px -2px #0003,
+    inset -50px -50px 0px 42px #4db351,
+    inset -53px -53px 0px 47px #3f8842,
+    inset -32px -30px 5px 15px #0003,
+    6px 6px 4px -1px #0003;
     box-shadow: inset -6px -6px 4px -2px #0003,
     inset -50px -50px 0px 42px #4db351,
     inset -53px -53px 0px 47px #3f8842,
@@ -159,11 +206,16 @@ button:focus{
 }
 
 .quarter.bottom-right:active {
+    -webkit-box-shadow:inset -6px -6px 4px -2px #0003,
+    inset -50px -50px 0px 42px #18a51d,
+    inset -53px -53px 0px 47px #138817,
+    inset -32px -30px 5px 15px #0003,
+    3px 3px 4px -1px #0003;
     box-shadow: inset -6px -6px 4px -2px #0003,
     inset -50px -50px 0px 42px #18a51d,
     inset -53px -53px 0px 47px #138817,
     inset -32px -30px 5px 15px #0003,
-    3px 3px 4px -1px #0003
+    3px 3px 4px -1px #0003;
 }
 
 .quarter.bottom-right[disabled] {
@@ -171,6 +223,11 @@ button:focus{
 }
 
 .quarter.bottom-right[disabled]:active {
+    -webkit-box-shadow:inset -6px -6px 4px -2px #0003,
+    inset -50px -50px 0px 42px #4db351,
+    inset -53px -53px 0px 47px #3f8842,
+    inset -32px -30px 5px 15px #0003,
+    6px 6px 4px -1px #0003;
     box-shadow: inset -6px -6px 4px -2px #0003,
     inset -50px -50px 0px 42px #4db351,
     inset -53px -53px 0px 47px #3f8842,
@@ -181,11 +238,16 @@ button:focus{
 }
 
 .quarter.bottom-right.active {
+    -webkit-box-shadow:inset -6px -6px 4px -2px #0003,
+    inset -50px -50px 0px 42px #18a51d,
+    inset -53px -53px 0px 47px #138817,
+    inset -32px -30px 5px 15px #0003,
+    3px 3px 4px -1px #0003;
     box-shadow: inset -6px -6px 4px -2px #0003,
     inset -50px -50px 0px 42px #18a51d,
     inset -53px -53px 0px 47px #138817,
     inset -32px -30px 5px 15px #0003,
-    3px 3px 4px -1px #0003
+    3px 3px 4px -1px #0003;
 }
 
 .middle-box {
@@ -196,6 +258,7 @@ button:focus{
     border-radius: 200px;
     top: calc(50% - 110px);
     right: calc(50% - 110px);
+    -webkit-box-shadow:0px 0px 9px 3px #0000005e;;
     box-shadow: 0px 0px 9px 3px #0000005e;
     overflow: hidden;
 
@@ -229,6 +292,12 @@ button:focus{
     
     h1.white-text{
         font-size: 30px;
+    }
+    .navbar-brand a {
+    width: 100%;
+    }
+    .navbar {
+        text-align: center;
     }
 }
 
@@ -282,6 +351,7 @@ button:focus{
     font-weight: 400;
     background-color: #e8e0e0;
     color: #28a745;
+    -webkit-box-shadow:0px 2px 14px 6px #b1b0b0;;
     box-shadow: 0px 2px 14px 6px #b1b0b0;
     text-transform: uppercase;
 }
@@ -322,6 +392,7 @@ button:focus{
     font-weight: 400;
     background-color: #e8e0e0;
     color: red;
+    -webkit-box-shadow:0px 2px 14px 6px #b1b0b0;
     box-shadow: 0px 2px 14px 6px #b1b0b0;
     text-transform: uppercase;
 }
@@ -349,6 +420,7 @@ button:focus{
 }
 
 .card-header {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
     border-radius: .25rem .25rem 0 0;
     width: 100%;
@@ -407,6 +479,7 @@ button:focus{
     height: 50px;
     border-radius: 25px;
     margin: 10px auto;
+    -webkit-box-shadow:0px 0px 7px 1px #545353;
     box-shadow: 0px 0px 7px 1px #545353;
     border: 3px solid #e0dddd;
     position :absolute;
@@ -428,6 +501,7 @@ button:focus{
     color: #fff;
     border-radius: 30px;
     border: none;
+    -webkit-box-shadow:0px 0px 7px 1px #545353;
     box-shadow: 0px 0px 7px 1px #545353;
     position: relative;
     

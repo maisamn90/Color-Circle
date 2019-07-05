@@ -99,9 +99,9 @@ function getUserPatern(button) {
     var greenButton = document.getElementById("greenButtonId");
     var blueButton = document.getElementById("blueButtonId");
     var orangeButton = document.getElementById("orangeButtonId");
-    if (button.id == redButton.id && tour.ended() == false){
-        $("#performance").addClass("hide");
-    }
+    // if (button.id == redButton.id && tour.ended() == false){
+    //     $("#performance").addClass("hide");
+    // }
     if (button != null && button.id == redButton.id && tour.ended() == true) {
         // alert ("Red is clicked");
         document.getElementById("red-audio").play();
@@ -161,7 +161,7 @@ async function checkPaternsLenght(userPatern, generatedPatern) {
             var levelTime = endTime - startTime;
             singleLevelTime = (levelTime - 1000) / 1000;
             totaLtime += singleLevelTime;
-            console.log(totaLtime);
+            // console.log(totaLtime);
             $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-check text-success mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime + "<sub>s</sub></li>");
             generatePatern();
 
@@ -403,7 +403,7 @@ var tour = new Tour({
       {
         
         element: "#end-tour",
-        content: "Note: The sequence will increase by one in every correct match you made. GOOD JOB now you are ready to play",
+        content: "Note: The sequence will increase by one in every correct match you made. GOOD JOB!! now you are ready to play",
         onShown: hideBtns
       }
       
