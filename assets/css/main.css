@@ -5,26 +5,26 @@ body {
     height: 100vh;
 }
 
-/***********************************************Coloring*/
 .white-text {
     color: #ffffff;
     text-shadow: 1px 1px 10px #000;
 }
 
-button:focus{
+button:focus {
     outline-color: transparent !important;
 }
 
-.container-fluid{
-        height: 90vh;
+/************************************************Full hight page styles*/
+
+.container-fluid {
+    height: 90vh;
 }
 
-.inner-content{
+.inner-content {
     height: 70vh;
 }
 
-
-/************************************************Rounding*/
+/************************************************round buttons styles*/
 
 .quarter {
     width: 50%;
@@ -42,7 +42,7 @@ button:focus{
 
 .quarter.top-left {
     border-top-left-radius: 100%;
-    -webkit-box-shadow:inset 6px 6px 4px -3px #0003,
+    -webkit-box-shadow: inset 6px 6px 4px -3px #0003,
     inset 47px 46px 0px 46px #89b0ef,
     inset 54px 53px 0px 48px #718ab3,
     -6px -6px 4px -1px #0003;
@@ -54,7 +54,7 @@ button:focus{
 }
 
 .quarter.top-left:active {
-    -webkit-box-shadow:inset 6px 6px 4px -3px #0003,
+    -webkit-box-shadow: inset 6px 6px 4px -3px #0003,
     inset 47px 46px 0px 46px #4286f4,
     inset 54px 53px 0px 48px #285eb5,
     -3px -3px 4px -1px #0003;
@@ -86,7 +86,7 @@ button:focus{
 
 .quarter.top-left.active {
     border-top-left-radius: 100%;
-    -webkit-box-shadow:inset 6px 6px 4px -3px #0003,
+    -webkit-box-shadow: inset 6px 6px 4px -3px #0003,
     inset 47px 46px 0px 46px #4286f4,
     inset 54px 53px 0px 48px #285eb5,
     -3px -3px 4px -1px #0003;
@@ -110,10 +110,11 @@ button:focus{
 }
 
 .quarter.top-right:active {
-    -webkit-box-shadow:inset -6px 6px 4px -3px #0003,
+    -webkit-box-shadow: inset -6px 6px 4px -3px #0003,
     inset -46px 46px 0px 46px #e53522,
     inset -51px 51px 0px 50px #c32e1d,
-    3px -3px 4px -1px #0003;;
+    3px -3px 4px -1px #0003;
+    ;
     box-shadow: inset -6px 6px 4px -3px #0003,
     inset -46px 46px 0px 46px #e53522,
     inset -51px 51px 0px 50px #c32e1d,
@@ -133,7 +134,7 @@ button:focus{
 }
 
 .quarter.top-right.active {
-    -webkit-box-shadow:inset -6px 6px 4px -3px #0003,
+    -webkit-box-shadow: inset -6px 6px 4px -3px #0003,
     inset -46px 46px 0px 46px #e53522,
     inset -51px 51px 0px 50px #c32e1d,
     3px -3px 4px -1px #0003;
@@ -153,7 +154,7 @@ button:focus{
 }
 
 .quarter.bottom-left:active {
-    -webkit-box-shadow:inset 6px -6px 4px -2px #0003,
+    -webkit-box-shadow: inset 6px -6px 4px -2px #0003,
     inset 47px -46px 0px 46px #eaa010,
     inset 57px -55px 0px 44px #c78912,
     -3px 3px 4px -1px #0003;
@@ -180,7 +181,7 @@ button:focus{
 }
 
 .quarter.bottom-left.active {
-    -webkit-box-shadow:inset 6px -6px 4px -2px #0003,
+    -webkit-box-shadow: inset 6px -6px 4px -2px #0003,
     inset 47px -46px 0px 46px #eaa010,
     inset 57px -55px 0px 44px #c78912,
     -3px 3px 4px -1px #0003;
@@ -192,7 +193,7 @@ button:focus{
 
 .quarter.bottom-right {
     border-bottom-right-radius: 100%;
-    -webkit-box-shadow:inset -6px -6px 4px -2px #0003,
+    -webkit-box-shadow: inset -6px -6px 4px -2px #0003,
     inset -50px -50px 0px 42px #4db351,
     inset -53px -53px 0px 47px #3f8842,
     inset -32px -30px 5px 15px #0003,
@@ -206,7 +207,7 @@ button:focus{
 }
 
 .quarter.bottom-right:active {
-    -webkit-box-shadow:inset -6px -6px 4px -2px #0003,
+    -webkit-box-shadow: inset -6px -6px 4px -2px #0003,
     inset -50px -50px 0px 42px #18a51d,
     inset -53px -53px 0px 47px #138817,
     inset -32px -30px 5px 15px #0003,
@@ -223,7 +224,7 @@ button:focus{
 }
 
 .quarter.bottom-right[disabled]:active {
-    -webkit-box-shadow:inset -6px -6px 4px -2px #0003,
+    -webkit-box-shadow: inset -6px -6px 4px -2px #0003,
     inset -50px -50px 0px 42px #4db351,
     inset -53px -53px 0px 47px #3f8842,
     inset -32px -30px 5px 15px #0003,
@@ -238,7 +239,7 @@ button:focus{
 }
 
 .quarter.bottom-right.active {
-    -webkit-box-shadow:inset -6px -6px 4px -2px #0003,
+    -webkit-box-shadow: inset -6px -6px 4px -2px #0003,
     inset -50px -50px 0px 42px #18a51d,
     inset -53px -53px 0px 47px #138817,
     inset -32px -30px 5px 15px #0003,
@@ -258,11 +259,9 @@ button:focus{
     border-radius: 200px;
     top: calc(50% - 110px);
     right: calc(50% - 110px);
-    -webkit-box-shadow:0px 0px 9px 3px #0000005e;;
+    -webkit-box-shadow: 0px 0px 9px 3px #0000005e;
     box-shadow: 0px 0px 9px 3px #0000005e;
     overflow: hidden;
-
-
 }
 
 @media (max-width:450px) {
@@ -289,17 +288,19 @@ button:focus{
         font-size: 15px!important;
         padding: 3px 18px!important;
     }
-    
-    h1.white-text{
+
+    h1.white-text {
         font-size: 30px;
     }
     .navbar-brand a {
-    width: 100%;
+        width: 100%;
     }
     .navbar {
         text-align: center;
     }
 }
+
+/************************************************Middel button styling*/
 
 #start {
     text-align: center;
@@ -332,12 +333,6 @@ button:focus{
     color: green;
 }
 
-#result-icon .fa-times {
-    /*color:red;*/
-}
-
-
-
 .hide {
     display: none !important;
 }
@@ -351,7 +346,7 @@ button:focus{
     font-weight: 400;
     background-color: #e8e0e0;
     color: #28a745;
-    -webkit-box-shadow:0px 2px 14px 6px #b1b0b0;;
+    -webkit-box-shadow: 0px 2px 14px 6px #b1b0b0;
     box-shadow: 0px 2px 14px 6px #b1b0b0;
     text-transform: uppercase;
 }
@@ -392,7 +387,7 @@ button:focus{
     font-weight: 400;
     background-color: #e8e0e0;
     color: red;
-    -webkit-box-shadow:0px 2px 14px 6px #b1b0b0;
+    -webkit-box-shadow: 0px 2px 14px 6px #b1b0b0;
     box-shadow: 0px 2px 14px 6px #b1b0b0;
     text-transform: uppercase;
 }
@@ -408,6 +403,9 @@ button:focus{
     color: #de7f89;
     cursor: context-menu;
 }
+
+
+/************************************************performance modal box*/
 
 #performance {
     text-align: center;
@@ -474,25 +472,26 @@ button:focus{
     justify-content: center;
 }
 
+
+/************************************************Floating buttons and menu*/
+
 .floating-btn {
     width: 50px;
     height: 50px;
     border-radius: 25px;
     margin: 10px auto;
-    -webkit-box-shadow:0px 0px 7px 1px #545353;
+    -webkit-box-shadow: 0px 0px 7px 1px #545353;
     box-shadow: 0px 0px 7px 1px #545353;
     border: 3px solid #e0dddd;
-    position :absolute;
+    position: absolute;
     bottom: 0px;
     display: block;
     visibility: hidden;
     transition: all .2s ease-in;
-    -webkit-transition:all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
     left: 5px;
-    
+
 }
-
-
 
 #btn-setting {
     background-color: #ff3f3f;
@@ -501,51 +500,43 @@ button:focus{
     color: #fff;
     border-radius: 30px;
     border: none;
-    -webkit-box-shadow:0px 0px 7px 1px #545353;
+    -webkit-box-shadow: 0px 0px 7px 1px #545353;
     box-shadow: 0px 0px 7px 1px #545353;
     position: relative;
-    
+
 }
-.floating-box{
+
+#btn-google-paly {
+    background-color: #4995e2;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    border-radius: 30px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 7px 1px #545353;
+    box-shadow: 0px 0px 7px 1px #545353;
+    position: relative;
+    font-size: 22px;
+    display: inline-block;
+    text-align: center;
+
+}
+
+#btn-google-paly i {
+    vertical-align: middle;
+    line-height: 60px;
+
+}
+
+.floating-box {
     position: absolute;
     bottom: 30px;
     left: 30px;
-    
+
 }
-.floating-btn.up{
+
+.floating-btn.up {
     visibility: visible;
-}
-#gradient-colored.up{
-    bottom: 60px;
-    display: block;
-}
-#gradient-colored {
-        background-image: linear-gradient(to right bottom, #e84b3a, #ed467a, #d45eb1, #a37ad6, #6490e2, #08a0e1, #00abd2, #00b3bb, #19bc98, #69be65, #adb92c, #f4a610);
-}
-#gradient-grey.up{
-    bottom: 120px;
-    display: block;
-}
-#gradient-grey {
-    background-image: linear-gradient(to right bottom, #9f9f9f, #b0b0b0, #c2c2c2, #d4d4d4, #e6e6e6, #e8e8e8, #ebeaeb, #edeced, #e0dedf, #d3d1d1, #c6c3c4, #b9b6b6);
-}
-
-#solid-grey.up{
-    bottom: 180px;
-    display: block;
-}
-#solid-grey {
-    background-color: #D1D1D1;
-    
-}
-
-#gradient-greenBlue.up{
-    bottom: 240px;
-    display: block;
-}
-
-#gradient-greenBlue{
-    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
 
 .floating-btn.selected::after {
@@ -555,11 +546,54 @@ button:focus{
     color: #fff;
 }
 
+#gradient-colored.up {
+    bottom: 60px;
+    display: block;
+}
+
+/************************************************background styling styles*/
+
+#gradient-colored {
+    background-image: linear-gradient(to right bottom, #e84b3a, #ed467a, #d45eb1, #a37ad6, #6490e2, #08a0e1, #00abd2, #00b3bb, #19bc98, #69be65, #adb92c, #f4a610);
+}
+
+#gradient-grey.up {
+    bottom: 120px;
+    display: block;
+}
+
+#gradient-grey {
+    background-image: linear-gradient(to right bottom, #9f9f9f, #b0b0b0, #c2c2c2, #d4d4d4, #e6e6e6, #e8e8e8, #ebeaeb, #edeced, #e0dedf, #d3d1d1, #c6c3c4, #b9b6b6);
+}
+
+#solid-grey.up {
+    bottom: 180px;
+    display: block;
+}
+
+#solid-grey {
+    background-color: #D1D1D1;
+
+}
+
+#gradient-greenBlue.up {
+    bottom: 240px;
+    display: block;
+}
+
+#gradient-greenBlue {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+
+/************************************************Sound Button*/
+
 #sound-btn.selected::after {
     font-family: "Font Awesome 5 Free";
     content: "\f6a9";
     color: #fff;
 }
+
 #sound-btn::after {
 
     font-family: "Font Awesome 5 Free";
@@ -568,20 +602,24 @@ button:focus{
     color: #fff;
 }
 
-#sound-btn.up{
+#sound-btn.up {
     bottom: -6px;
     display: block;
     left: 69px;
 }
-#sound-btn{
+
+#sound-btn {
     background-color: #28a745;
 }
 
 
 audio {
-    display:none;
+    display: none;
 }
-#end-tour{
+
+/************************************************Tour styles*/
+
+#end-tour {
     position: absolute;
     top: 50%;
     right: 60%;

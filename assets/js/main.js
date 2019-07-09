@@ -1,6 +1,6 @@
- $(document).ready(function(){
-   $(".floating-btn").tooltip();
-   tour.end()
+//Turn off tutorial mode//
+$(document).ready(function() {
+    tour.end()
 });
 
 
@@ -11,113 +11,118 @@ var singleLevelTime = 0;
 var totaLtime = 0;
 disabledButtons();
 
+
+// Generate the Patten function
 async function generatePatern() {
-    if (tour.ended() == false){
-        // alert(tour.ended())
+    //Check game mode if its in tutorial 
+    if (tour.ended() == false) {
         $(".active").removeClass("active");
-                        await sleep(1000);
-                        $(".red-quarter").addClass("active");
-                        document.getElementById("red-audio").play();
-                        setTimeout(removeActiveClass, 500);
-                        await sleep(1000);
-                        enableButtons();
-    }else
-    {
-    $("#tour-btn").addClass("hide")
-    $("#start").addClass("disabled");
-    $("#failed").addClass("disabled");
-    await sleep(500);
-    $("#failed").removeClass("disabled");
-    $("#start").removeClass("disabled");
-    $("#start").addClass("hide");
-    $("#playing").removeClass("hide");
-    var i = 0;
-    var j = 0;
-    var paternlength = patern.length + 1;
-    for (i; i < 100; i++) {
-        for (j; j < paternlength; j++) {
-            var x = Math.floor((Math.random() * 4) + 1);
-            patern.push(x);
-            disabledButtons();
-            $(".level-num").text(paternlength);
-            // document.getElementById("demo").innerHTML = "[" + patern + "]";
-            if (patern.length == paternlength) {
+        await sleep(1000);
+        $(".red-quarter").addClass("active");
+        document.getElementById("red-audio").play();
+        setTimeout(removeActiveClass, 500);
+        await sleep(1000);
+        enableButtons();
+    }
+    else {
+        // Change layout for start playing
+        $("#tour-btn").addClass("hide")
+        $("#start").addClass("disabled");
+        $("#failed").addClass("disabled");
+        await sleep(500);
+        $("#failed").removeClass("disabled");
+        $("#start").removeClass("disabled");
+        $("#start").addClass("hide");
+        $("#playing").removeClass("hide");
+        var i = 0;
+        var j = 0;
+        //Save array length (Pattern length)
+        var paternlength = patern.length + 1;
+        //Start creating the pattern array 
+        for (i; i < 100; i++) {
+            //Adding random array values and save it in main array
+            for (j; j < paternlength; j++) {
+                var x = Math.floor((Math.random() * 4) + 1);
+                patern.push(x);
+                disabledButtons();
+                //Save every level (the array length is the level number)
+                $(".level-num").text(paternlength);
+                //Check each random input and add effect for each button
+                if (patern.length == paternlength) {
 
-                for (var l = 0; l < 100; l++) {
-                    if (patern[l] == 1) {
-                        $(".active").removeClass("active");
-                        $(".blue-quarter").addClass("active");
-                        document.getElementById("blue-audio").play();
-                        //   removeActiveClass(3000);
-                        setTimeout(removeActiveClass, 500);
-                        await sleep(1000);
-
-                    }
-                    else if (patern[l] == 2) {
-                        $(".active").removeClass("active");
-                        $(".red-quarter").addClass("active");
-                        document.getElementById("red-audio").play();
-                        setTimeout(removeActiveClass, 500);
-                        await sleep(1000);
-                    }
-                    else if (patern[l] == 3) {
-                        $(".active").removeClass("active");
-                        $(".green-quarter").addClass("active");
-                        document.getElementById("green-audio").play();
-                        setTimeout(removeActiveClass, 500);
-                        await sleep(1000);
-                    }
-                    else {
-                        if (patern[l] == 4) {
+                    for (var l = 0; l < 100; l++) {
+                        if (patern[l] == 1) {
                             $(".active").removeClass("active");
-                            $(".yellow-quarter").addClass("active");
-                            document.getElementById("yellow-audio").play();
+                            $(".blue-quarter").addClass("active");
+                            document.getElementById("blue-audio").play();
+                            setTimeout(removeActiveClass, 500);
+                            await sleep(1000);
+
+                        }
+                        else if (patern[l] == 2) {
+                            $(".active").removeClass("active");
+                            $(".red-quarter").addClass("active");
+                            document.getElementById("red-audio").play();
                             setTimeout(removeActiveClass, 500);
                             await sleep(1000);
                         }
+                        else if (patern[l] == 3) {
+                            $(".active").removeClass("active");
+                            $(".green-quarter").addClass("active");
+                            document.getElementById("green-audio").play();
+                            setTimeout(removeActiveClass, 500);
+                            await sleep(1000);
+                        }
+                        else {
+                            if (patern[l] == 4) {
+                                $(".active").removeClass("active");
+                                $(".yellow-quarter").addClass("active");
+                                document.getElementById("yellow-audio").play();
+                                setTimeout(removeActiveClass, 500);
+                                await sleep(1000);
+                            }
 
+                        }
                     }
                 }
+
+                startTime = new Date();
+
+                enableButtons();
+                return patern;
             }
-
-            startTime = new Date();
-
-            enableButtons();
-            return patern;
         }
     }
-}
 }
 
 var inputPatern = [];
 
+// Checking user pattern input function
 function getUserPatern(button) {
-    
+
     var generatedPatern = patern;
 
     var redButton = document.getElementById("redButtonId");
     var greenButton = document.getElementById("greenButtonId");
     var blueButton = document.getElementById("blueButtonId");
     var orangeButton = document.getElementById("orangeButtonId");
-    // if (button.id == redButton.id && tour.ended() == false){
-    //     $("#performance").addClass("hide");
-    // }
+    // Check if red button clicked
     if (button != null && button.id == redButton.id && tour.ended() == true) {
-        // alert ("Red is clicked");
         document.getElementById("red-audio").play();
         inputPatern.push(2);
         checkPaternsLenght(inputPatern, generatedPatern);
         return inputPatern;
     }
     else
+    // Check if green button clicked
     if (button != null && button.id == greenButton.id) {
-        //alert ("green is clicked");
         document.getElementById("green-audio").play();
         inputPatern.push(3);
         checkPaternsLenght(inputPatern, generatedPatern);
         return inputPatern;
     }
     else
+    // Check if blue button clicked
     if (button != null && button.id == blueButton.id) {
         // alert ("Blue is clicked");
         document.getElementById("blue-audio").play();
@@ -126,6 +131,7 @@ function getUserPatern(button) {
         return inputPatern;
     }
     else
+    // Check if yellow button clicked
     if (button != null && button.id == orangeButton.id) {
         // alert ("Orange is clicked");
         document.getElementById("yellow-audio").play();
@@ -135,47 +141,47 @@ function getUserPatern(button) {
     }
 }
 
-
+// Start Comparing between both patterns (Generated pattern VS User Pattern)
 async function checkPaternsLenght(userPatern, generatedPatern) {
     var userPaternLenght = userPatern.length;
     var generatedPaternLength = generatedPatern.length;
 
-
+    //First Step: Check if user finshed entering values by comparing both user pattern length and generated pattern lenght
     if (userPaternLenght == generatedPaternLength) {
-        //alert ("length is equals");
-        // alert(generatedPatern.toString());
-        // alert(userPatern.toString());
+        //Second Step: if lenght is equals, check the both patterns values
         if (generatedPatern.toString() == userPatern.toString()) {
-            //alert("Success");
-            // $(".level").append("<i class='fas fa-check'></i>");
+            //Success UI mode 
             disabledButtons();
             $("#result-icon").removeClass("hide");
             $(".level").addClass("hide");
             await sleep(1000);
             $("#result-icon").addClass("hide");
             $(".level").removeClass("hide");
-            // $(this).children("i").remove();
+            //Prepare the arrays for next round 
             inputPatern = [];
             generatedPatern = [];
+            //calculate and save time duration for each level
             endTime = new Date();
             var levelTime = endTime - startTime;
             singleLevelTime = (levelTime - 1000) / 1000;
             totaLtime += singleLevelTime;
-            // console.log(totaLtime);
             $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-check text-success mr-2'></i>Level " + userPaternLenght + " - " + singleLevelTime + "<sub>s</sub></li>");
+            //Generate new level 
             generatePatern();
 
         }
         else {
+            //Third Step: if both patterns values are not matched
+            //fail UI mode 
             $("#playing").addClass("hide");
             $("#failed").removeClass("hide");
             disabledButtons();
-            // alert("Not");
             wrongInput();
-            //document.getElementById("demo").innerHTML = "";
             inputPatern = [];
             generatedPatern = [];
             patern = [];
+            
+            //check failure level to view result
             $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength + "</li>");
             if (generatedPaternLength - 1 == 1) {
                 $(".total-result").html("<strong>" + (generatedPaternLength - 1) + "</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
@@ -190,25 +196,26 @@ async function checkPaternsLenght(userPatern, generatedPatern) {
             $("#performance").removeClass("hide");
             $('#performance-modal').modal('show');
 
-            //document.getElementById("start").disabled = false;
         }
 
     }
     else {
+    // Catch wrong input the user inter it by creat loop to pass every value in each patterns
         var k = 0;
+        //if both pattern valus are matches let user keep playing
         for (k; k < userPaternLenght; k++) {
             if (generatedPatern[k] == userPatern[k]) {
                 getUserPatern();
             }
-
+            //if user pattern dose not matching with generated value 
+            //failure UI mode 
             else {
                 $("#playing").addClass("hide");
                 disabledButtons();
                 $("#failed").removeClass("hide");
                 result = (generatedPaternLength - 1) + " level - during " + totaLtime.toFixed(2) + "s";
-                //alert("wrong input");
                 wrongInput();
-                
+                //check failer level to view result
                 $(".list-group-flush").append("<li class='list-group-item'><i class='fas fa-times text-danger mr-2'></i>Level " + generatedPaternLength + "</li>");
                 if (generatedPaternLength - 1 == 1) {
                     $(".total-result").html("<strong>" + (generatedPaternLength - 1) + "</strong>" + " level - during " + "<strong>" + totaLtime.toFixed(2) + "<sub>s</sub></strong>");
@@ -222,15 +229,12 @@ async function checkPaternsLenght(userPatern, generatedPatern) {
 
 
                 }
-
+                
                 $("#performance").removeClass("hide");
                 $('.modal').modal('show');
                 generatedPatern = [];
                 inputPatern = [];
                 patern = [];
-
-                // document.getElementById("demo").innerHTML = "";
-                //document.getElementById("start").disabled = false;
 
             };
         }
@@ -238,37 +242,43 @@ async function checkPaternsLenght(userPatern, generatedPatern) {
     }
 }
 
+//Generat pattern button effects
 function removeActiveClass() {
     $(".active").removeClass("active");
 }
 
+//To creat a delay between each level
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+//To retry Playing after failer
 $("#failed").on("click", function() {
     $(".total-result").html("");
     $("ul").html("");
     $("#performance").addClass("hide");
     totaLtime = 0;
-    if ($("#sound-btn").hasClass("selected")){
-    document.getElementById("red-audio").muted = true;
-    document.getElementById("blue-audio").muted = true;
-    document.getElementById("green-audio").muted = true;
-    document.getElementById("yellow-audio").muted = true;
-    document.getElementById("wrong-audio").muted = true;
+    
+    //Check the sound mode
+    if ($("#sound-btn").hasClass("selected")) {
+        document.getElementById("red-audio").muted = true;
+        document.getElementById("blue-audio").muted = true;
+        document.getElementById("green-audio").muted = true;
+        document.getElementById("yellow-audio").muted = true;
+        document.getElementById("wrong-audio").muted = true;
     }
-    else{
-    document.getElementById("red-audio").muted = false;
-    document.getElementById("blue-audio").muted = false;
-    document.getElementById("green-audio").muted = false;
-    document.getElementById("yellow-audio").muted = false;
-    document.getElementById("wrong-audio").muted = false;
+    else {
+        document.getElementById("red-audio").muted = false;
+        document.getElementById("blue-audio").muted = false;
+        document.getElementById("green-audio").muted = false;
+        document.getElementById("yellow-audio").muted = false;
+        document.getElementById("wrong-audio").muted = false;
     }
     generatePatern();
 });
 
 
+//Disable and enable buttons function
 function disabledButtons() {
     $(".blue-quarter").removeAttr("onclick");
     $(".blue-quarter").attr("disabled", "disabled");
@@ -297,17 +307,16 @@ function enableButtons() {
     $(".yellow-quarter").removeAttr("disabled", "disabled");
 }
 
-/////////////////
+//Setting button menu effect
 
-$("#btn-setting").on("click", function () {
-    $(".floating-btn").toggleClass("up",1000);
+$("#btn-setting").on("click", function() {
+    $(".floating-btn").toggleClass("up", 1000);
 });
 
+//Change background color and image buttons
 $("#solid-grey").on("click", function() {
     $("body").css("background-image", "none");
     $("body").css("background-color", "#D1D1D1");
-    
-    
 });
 
 $("#gradient-grey").on("click", function() {
@@ -322,17 +331,19 @@ $("#gradient-greenBlue").on("click", function() {
     $("body").css("background-image", "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)")
 });
 
+//Add check icon (Class : selected) on seleted floating menu button
 var menu = document.getElementById("bg-menu");
 var btns = menu.getElementsByClassName("bg-menu-item");
 for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("selected");
-  current[0].className = current[0].className.replace("selected", "");
-  this.className += " selected";
-  });
+    btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("selected");
+        current[0].className = current[0].className.replace("selected", "");
+        this.className += " selected";
+    });
 }
 
-function wrongInput(){
+//Wrong input Sound function
+function wrongInput() {
     document.getElementById("red-audio").muted = true;
     document.getElementById("blue-audio").muted = true;
     document.getElementById("green-audio").muted = true;
@@ -340,14 +351,15 @@ function wrongInput(){
     document.getElementById("wrong-audio").play();
 }
 
+//Turn sound on and off button 
 $("#sound-btn").on("click", function() {
     $(this).toggleClass("selected");
-    if ($(this).hasClass("selected")){
+    if ($(this).hasClass("selected")) {
         document.getElementById("red-audio").muted = true;
-    document.getElementById("blue-audio").muted = true;
-    document.getElementById("green-audio").muted = true;
-    document.getElementById("yellow-audio").muted = true;
-    document.getElementById("wrong-audio").muted = true;
+        document.getElementById("blue-audio").muted = true;
+        document.getElementById("green-audio").muted = true;
+        document.getElementById("yellow-audio").muted = true;
+        document.getElementById("wrong-audio").muted = true;
     }
     else {
         document.getElementById("red-audio").muted = false;
@@ -355,65 +367,64 @@ $("#sound-btn").on("click", function() {
         document.getElementById("green-audio").muted = false;
         document.getElementById("yellow-audio").muted = false;
         document.getElementById("wrong-audio").muted = false;
-        
+
     }
 });
 
+//Open and close floatin menu button
 $(".container-fluid").on("click", function() {
-    if ($(".floating-btn").hasClass("up"))
-    {
+    if ($(".floating-btn").hasClass("up")) {
         $(".floating-btn").removeClass("up");
     }
 });
 
-///////////////////////////
-var hideBtns = function(){
+//Tutorial function and styling 
+var hideBtns = function() {
     $("[data-role='next'],[data-role='prev'],[data-role='pause-resume'],.popover .arrow").hide();
 };
 
-var hideRightLeftBtn = function(){
-   $("[data-role='next'],[data-role='prev'],[data-role='pause-resume']").hide();
+var hideRightLeftBtn = function() {
+    $("[data-role='next'],[data-role='prev'],[data-role='pause-resume']").hide();
 };
 
+//Tutorial API
 var tour = new Tour({
 
-    steps: [
-      {
-        element: "#game-tools",
-        title: "Simon Game online",
-        content: "In this game you have to use your memory to match the colores that appear on the colored weel",
-        placement:"top"
-      },
-      {
-        title: "First Step",
-        element: ".middle-box",
-        content: "Press Here to start the game",
-        reflex: true,
-        onShown: hideRightLeftBtn,
-        placement:"top"
-      },
-      {
-        title: "second Step",
-        element: "#redButtonId",
-        content: "Wait a second to see the color then press on it to match",
-        reflex: true,
-        onShown: hideRightLeftBtn,
-        placement:"top"
-      },
-      {
-        
-        element: "#end-tour",
-        content: "Note: The sequence will increase by one in every correct match you made. GOOD JOB!! now you are ready to play",
-        onShown: hideBtns
-      }
-      
+    steps: [{
+            element: "#game-tools",
+            title: "Simon Game online",
+            content: "In this game you have to use your memory to match the colores that appear on the colored weel",
+            placement: "top"
+        },
+        {
+            title: "First Step",
+            element: ".middle-box",
+            content: "Press Here to start the game",
+            reflex: true,
+            onShown: hideRightLeftBtn,
+            placement: "top"
+        },
+        {
+            title: "second Step",
+            element: "#redButtonId",
+            content: "Wait a second to see the color then press on it to match",
+            reflex: true,
+            onShown: hideRightLeftBtn,
+            placement: "top"
+        },
+        {
+            element: "#end-tour",
+            content: "Note: The sequence will increase by one in every correct match you made. GOOD JOB!! now you are ready to play",
+            onShown: hideBtns
+        }
+
     ],
-     backdrop: true,
-     storage: false
-});
-    $("#tour-btn").on("click", function() {
-        tour.init();
-        tour.start(true);
-        
+    backdrop: true,
+    storage: false
 });
 
+$("#tour-btn").on("click", function() {
+    tour.init();
+    tour.start(true);
+
+});

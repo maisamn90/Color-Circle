@@ -5,36 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap" rel="stylesheet">
+    <!--Bootstrap Style Sheet-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Theme Style Sheet-->
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+    <!--Bootstrap tour tutorial Style Sheet-->
     <link rel="stylesheet" href="assets/css/bootstrap-tour.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/bootstrap-tour-standalone.min.css" type="text/css" />
+    <!--Fontawesome Style Sheet-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <!--Popper JS for Bootstrap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!--JQuery file -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--Bootstrap Java Script-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--Bootstrap tour tutorial Java Script-->
     <script type="text/javascript" src="assets/js/bootstrap-tour.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap-tour-standalone.min.js"></script>
+    <!--Fontawesome Java Script -->
     <script src="https://kit.fontawesome.com/18a75bc366.js"></script>
     <title>Color Circle</title>
 </head>
 
 <body>
-
+    <!--Header and nav section for logo -->
     <header>
         <nav class="navbar navbar-dark">
             <a class="navbar-brand mb-0 h1 white-text"><img width="170px" src="assets/media/images/color-circle-white-shadow-logo.png"></img></a>
         </nav>
     </header>
+    <!--Content section start-->
     <div class="container-fluid">
         <div class="row align-items-center inner-content">
+            <!-- Description text box start -->
             <div class="col-xl-4">
                 <div class="col-12 self-content-center">
                     <h1 class="white-text">Simon Game Online</h1>
                     <p class="white-text">Easy, funny and addicting way to exercise brain memory! <u id="tour-btn" style="cursor:pointer;">Take a tour</u></p>
                 </div>
             </div>
+            <!-- Description text box end -->
+            <!-- Full Game tools start -->
             <div class="col-xl-8" id="game-tools">
                 <div class="row">
                     <div class="col-6 p-0">
@@ -55,7 +69,6 @@
                 <div class="middle-box" class="hide">
                     <div id="start" onclick="generatePatern();">
                         <p>Start</p>
-
                     </div>
 
                     <div id="playing" class="hide">
@@ -74,8 +87,12 @@
 
                 </div>
             </div>
+            <!-- Full Game tools end -->
         </div>
     </div>
+    <!--Content section end-->
+    
+    <!-- game audios start -->
     <audio id="blue-audio">
       <source src="assets/media/audio/blue.wav" type="audio/wav">
     </audio>
@@ -91,20 +108,23 @@
     <audio id="wrong-audio">
       <source src="assets/media/audio/wrong.mp3" type="audio/mp3">
     </audio>
+    <!-- game audios end -->
     
-    
-    
+    <!-- Floating buttons and menu start -->
     <div class="floating-box" id="floating-menu">
         <div id="bg-menu">
             <button id="solid-grey" class="floating-btn bg-menu-item"></button>
             <button id="gradient-grey" class="floating-btn bg-menu-item"></button>
             <button id="gradient-greenBlue" class="floating-btn bg-menu-item"></button>
-            <button id="gradient-colored" class="floating-btn bg-menu-item selected" ></button>
-            <button id="sound-btn" class="floating-btn" ></button>
+            <button id="gradient-colored" class="floating-btn bg-menu-item selected"></button>
+            <button id="sound-btn" class="floating-btn"></button>
         </div>
         <button id="btn-setting"><i class="fas fa-cog"></i></button>
-
+        <a id="btn-google-paly" target="_blank" href="https://play.google.com/store/apps/details?id=ca.colorcircle.game"><i class="fab fa-google-play"></i></a>
     </div>
+    <!-- Floating buttons and menu end -->
+    
+    <!-- performance modal box start -->
     <div class="modal" tabindex="-1" role="dialog" id="performance-modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -131,7 +151,11 @@
             </div>
         </div>
     </div>
+    <!-- performance modal box end -->
+    
+    <!-- centered middel div for last tour popover box -->
     <div id="end-tour"></div>
+    
     <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 
