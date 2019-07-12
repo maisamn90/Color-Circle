@@ -519,8 +519,12 @@ button:focus {
     font-size: 22px;
     display: inline-block;
     text-align: center;
+    transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
 
 }
+
+
 
 #btn-google-paly i {
     vertical-align: middle;
@@ -546,12 +550,13 @@ button:focus {
     color: #fff;
 }
 
+
+/************************************************background styling styles*/
+
 #gradient-colored.up {
     bottom: 60px;
     display: block;
 }
-
-/************************************************background styling styles*/
 
 #gradient-colored {
     background-image: linear-gradient(to right bottom, #e84b3a, #ed467a, #d45eb1, #a37ad6, #6490e2, #08a0e1, #00abd2, #00b3bb, #19bc98, #69be65, #adb92c, #f4a610);
@@ -585,6 +590,9 @@ button:focus {
     background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
 
+#btn-google-paly.up {
+    margin-left: 60px;
+}
 
 /************************************************Sound Button*/
 

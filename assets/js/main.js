@@ -311,6 +311,8 @@ function enableButtons() {
 
 $("#btn-setting").on("click", function() {
     $(".floating-btn").toggleClass("up", 1000);
+    $("#btn-google-paly").toggleClass("up", 1000);
+    
 });
 
 //Change background color and image buttons
