@@ -378,6 +378,9 @@ $(".container-fluid").on("click", function() {
     if ($(".floating-btn").hasClass("up")) {
         $(".floating-btn").removeClass("up");
     }
+    if ($("#btn-google-paly").hasClass("up")) {
+        $("#btn-google-paly").removeClass("up");
+    }
 });
 
 //Tutorial function and styling 
