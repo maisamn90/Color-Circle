@@ -11,6 +11,9 @@ Interactive Front-end Development Milestone Project – **Memory Game**
 
 Color circle memory game it’s a game inspired by Simon, in this game the player has to follow the pattern of lights and sounds and repeat the same combination to move on to the next round. The sequence will start with one color, then it will increase as long as the player gave correct match.
 
+Github pages Link:
+--
+https://maisamn90.github.io/Color-Circle/
 
 Planning and resources:
 --
